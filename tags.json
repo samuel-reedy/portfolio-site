@@ -1,6 +1,6 @@
 {
     "languages": {
-        "selected_colour": "#4F1787",
+        "selected_colour": "#00af97",
         "unselected_colour": "#222222",
         "tags": [
             "C",
@@ -13,7 +13,7 @@
         ]
     },
     "software": {
-        "selected_colour": "#C63C51",
+        "selected_colour": "#008851",
         "unselected_colour": "#222222",
         "tags": [
             "Unity",
@@ -26,7 +26,7 @@
         ]
     },
     "other": {
-        "selected_colour": "#006A67",
+        "selected_colour": "#c1554e",
         "unselected_colour": "#222222",
         "tags": [
             "Agile",
