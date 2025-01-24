@@ -6,9 +6,16 @@
     <title>My Portfolio</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="static/css/styles.css" rel="stylesheet">
+
+    <script src="static/javascript/navbar.js"></script>
 </head>
 <body>
+
+    <div id="navbar"></div>
+
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-4 text-center">
@@ -34,6 +41,17 @@
     </div>
     <p class="text-center">Mechatronics Engineer, Graduate from University of Auckland</p>
 
+    <!-- Filter Section -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div id="filter-tags" class="d-flex flex-wrap gap-2">
+                    <!-- Filter tags will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Projects Section -->
     <div class="container mt-5" id="projects-sections">
         <!-- Sections will be dynamically inserted here -->
@@ -41,67 +59,140 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('projects.json')
-                .then(response => response.json())
-                .then(data => {
-                    const sections = {
-                        "university_projects": "University Projects",
-                        "work_experience": "Work Experience",
-                        "other": "Other Projects"
-                    };
+            Promise.all([
+                fetch('projects.json').then(response => response.json()),
+                fetch('tags.json').then(response => response.json())
+            ])
+            .then(([projectsData, tagsData]) => {
+                const sections = {
+                    "university_projects": "University Projects",
+                    "work_experience": "Work Experience",
+                    "other": "Other Projects"
+                };
     
-                    const container = document.getElementById('projects-sections');
+                const container = document.getElementById('projects-sections');
+                const filterContainer = document.getElementById('filter-tags');
+                const allTags = new Set();
+                let selectedTags = new Set();
     
-                    for (const [key, title] of Object.entries(sections)) {
-                        const section = document.createElement('div');
-                        section.classList.add('mt-5');
-    
-                        const sectionTitle = document.createElement('h2');
-                        sectionTitle.classList.add('text-center');
-                        sectionTitle.textContent = title;
-                        section.appendChild(sectionTitle);
-    
-                        const row = document.createElement('div');
-                        row.classList.add('row');
-    
-                        data[key].forEach(project => {
-                            const projectCard = `
-                                <div class="col-md-4">
-                                    <div class="card mb-4 text-white bg-dark" onclick="window.location.href='${project.link}'">
-                                        <div class="card-image bg-dark">
-                                            <img src="${project.image}" class="card-img-top" alt="${project.title}">
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">${project.short_title || project.title}</h5>
-                                            <p class="card-year">${project.year}</p>
-                                            <div class="card-body-hidden">
-                                                <div class="card-description">
-                                                    <p class="card-text">${project.description}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                            row.innerHTML += projectCard;
-                        });
-    
-                        section.appendChild(row);
-                        container.appendChild(section);
-                    }
-    
-                    // Add JavaScript to dynamically set max-height
-                    const cards = document.querySelectorAll('.card');
-                    cards.forEach(card => {
-                        const hiddenBody = card.querySelector('.card-body-hidden');
-                        card.addEventListener('mouseenter', () => {
-                            hiddenBody.style.maxHeight = hiddenBody.scrollHeight + 'px';
-                        });
-                        card.addEventListener('mouseleave', () => {
-                            hiddenBody.style.maxHeight = '0';
+                // Collect all unique tags and check for missing tags
+                Object.values(projectsData).forEach(projects => {
+                    projects.forEach(project => {
+                        project.tags.forEach(tag => {
+                            if (!Object.values(tagsData).some(category => category.tags.includes(tag))) {
+                                throw new Error(`Tag "${tag}" in project "${project.title}" is not defined in tags.json`);
+                            }
+                            allTags.add(tag);
                         });
                     });
                 });
+    
+                // Create filter buttons with colors
+                Object.entries(tagsData).forEach(([category, { selected_colour, unselected_colour, tags }]) => {
+                    tags.forEach(tag => {
+                        const tagButton = document.createElement('button');
+                        tagButton.classList.add('btn', 'btn-primary', 'm-1');
+                        tagButton.textContent = tag;
+                        tagButton.style.color = 'white';
+                        tagButton.style.borderColor = unselected_colour;
+                        tagButton.style.backgroundColor = unselected_colour
+                        tagButton.innerHTML = ` ${tag} <i class="fas fa-plus"></i>`;
+                        tagButton.addEventListener('click', () => toggleTag(tag, tagButton, selected_colour, unselected_colour));
+                        filterContainer.appendChild(tagButton);
+                        
+                    });
+                });
+    
+                // Function to toggle tag selection
+                function toggleTag(tag, button, selected_colour, unselected_colour) {
+                    if (selectedTags.has(tag)) {
+                        selectedTags.delete(tag);
+                        button.classList.add('btn-primary');
+                        button.style.backgroundColor = unselected_colour;
+                        button.style.color = 'white';
+                        button.innerHTML = ` ${tag} <i class="fas fa-plus"></i>`; 
+                    } else {
+                        selectedTags.add(tag);
+                        button.classList.remove('btn-primary');
+                        button.classList.add('btn-primary');
+                        button.style.backgroundColor = selected_colour;
+                        button.style.color = 'white';
+                        button.innerHTML = `${tag} <i class="fas fa-check"></i>`;
+                    }
+                    filterProjects();
+                }
+    
+                // Function to filter projects by selected tags
+                function filterProjects() {
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(card => {
+                        const projectTags = card.querySelector('.card-tags').textContent;
+                        const matches = [...selectedTags].every(tag => projectTags.includes(tag));
+                        if (matches || selectedTags.size === 0) {
+                            card.parentElement.style.display = 'block';
+                        } else {
+                            card.parentElement.style.display = 'none';
+                        }
+                    });
+                }
+    
+                // Render projects
+                for (const [key, title] of Object.entries(sections)) {
+                    const section = document.createElement('div');
+                    section.classList.add('mt-5');
+    
+                    const sectionTitle = document.createElement('h2');
+                    sectionTitle.classList.add('text-center');
+                    sectionTitle.textContent = title;
+                    section.appendChild(sectionTitle);
+    
+                    const row = document.createElement('div');
+                    row.classList.add('row');
+    
+                    projectsData[key].forEach(project => {
+                        const tags = project.tags.map(tag => {
+                            const tagColor = Object.entries(tagsData).find(([category, { tags }]) => tags.includes(tag))[1].color;
+                            return `<span style="background-color: ${tagColor};">${tag}</span>`;
+                        }).join('');
+                        const projectCard = `
+                            <div class="col-md-4">
+                                <div class="card mb-4 text-black shadow-sm" onclick="window.location.href='${project.link}'">
+                                    <div class="card-image">
+                                        <img src="${project.image}" class="card-img-top" alt="${project.title}">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-year">${project.year}</div>
+                                        <h5 class="card-title">${project.short_title || project.title}</h5>
+                                        <div class="card-body-hidden">
+                                            <div class="card-description">
+                                                <p class="card-text">${project.description}</p>
+                                            </div>
+                                            <div class="card-tags">${tags}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        row.innerHTML += projectCard;
+                    });
+    
+                    section.appendChild(row);
+                    container.appendChild(section);
+                }
+    
+                // Add JavaScript to dynamically set max-height
+                const cards = document.querySelectorAll('.card');
+                cards.forEach(card => {
+                    const hiddenBody = card.querySelector('.card-body-hidden');
+                    card.addEventListener('mouseenter', () => {
+                        hiddenBody.style.maxHeight = hiddenBody.scrollHeight + 'px';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        hiddenBody.style.maxHeight = '0';
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading data:', error));
         });
     </script>
 </body>

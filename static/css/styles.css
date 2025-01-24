@@ -1,10 +1,13 @@
 /* General styles */
 body {
-    background-color: rgb(6, 11, 26);
-    color: white;
-    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
+}
+
+html {
+    overflow-y: scroll;
 }
 
 .card {
@@ -13,12 +16,17 @@ body {
     transition: all 0.6s ease;
     width: 100%;
     overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 0px;
+    overflow: visible;
 }
 
 .card img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 20px 20px 0 0; /* Adjust border-radius for the image */
 }
 
 .card-body-hidden {
@@ -32,7 +40,7 @@ body {
 }
 
 .card-year {
-    color: red;
+    color: rgb(201, 70, 10);
 }
 
 .card-title {
@@ -41,7 +49,29 @@ body {
     font-style: italic;
 }
 
-.card-image{
-    padding: 3%;
-    border-radius: 15px;
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.card-tags span {
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#filter-tags .btn {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: inherit; /* Ensure the button color is inherited */
+    color: white;
+}
+
+.btn-primary i {
+    margin-left: 5px; /* Add some space between the icon and the text */
 }

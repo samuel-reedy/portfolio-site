@@ -1,0 +1,42 @@
+{
+    "languages": {
+        "selected_colour": "#4F1787",
+        "unselected_colour": "#222222",
+        "tags": [
+            "C",
+            "C++",
+            "C#",
+            "Python",
+            "Javascript",
+            "HTML / CSS",
+            "SQL"
+        ]
+    },
+    "software": {
+        "selected_colour": "#C63C51",
+        "unselected_colour": "#222222",
+        "tags": [
+            "Unity",
+            "Inventor",
+            "Fusion 360",
+            "Verilog",
+            "Ansys CFX",
+            "Matlab",
+            "Ki CAD"
+        ]
+    },
+    "other": {
+        "selected_colour": "#006A67",
+        "unselected_colour": "#222222",
+        "tags": [
+            "Agile",
+            "Scrum",
+            "3D Printing",
+            "Soldering",
+            "Docker",
+            "Keras",
+            "CNN",
+            "Game Dev"
+        ]
+    }
+}
