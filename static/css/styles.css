@@ -1,0 +1,47 @@
+/* General styles */
+body {
+    background-color: rgb(6, 11, 26);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-body-hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.card-footer small {
+    display: block;
+}
+
+.card-year {
+    color: red;
+}
+
+.card-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.card-image{
+    padding: 3%;
+    border-radius: 15px;
+}

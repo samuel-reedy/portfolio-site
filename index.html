@@ -4,8 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Samuel Reedy</h1>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h1>SAMUEL REEDY</h1>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-1"><i class="fas fa-envelope"></i> samreedy7@gmail.com</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-1"><i class="fas fa-phone"></i> 021 049 5952</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-1"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/samuel-reedy/" target="_blank">linkedin.com/in/samuel-reedy/</a></p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-1"><i class="fab fa-github"></i> <a href="https://github.com/samuelreedy" target="_blank">github.com/samuel-reedy</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-center">Mechatronics Engineer, Graduate from University of Auckland</p>
+
+    <!-- Projects Section -->
+    <div class="container mt-5" id="projects-sections">
+        <!-- Sections will be dynamically inserted here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    const sections = {
+                        "university_projects": "University Projects",
+                        "work_experience": "Work Experience",
+                        "other": "Other Projects"
+                    };
+    
+                    const container = document.getElementById('projects-sections');
+    
+                    for (const [key, title] of Object.entries(sections)) {
+                        const section = document.createElement('div');
+                        section.classList.add('mt-5');
+    
+                        const sectionTitle = document.createElement('h2');
+                        sectionTitle.classList.add('text-center');
+                        sectionTitle.textContent = title;
+                        section.appendChild(sectionTitle);
+    
+                        const row = document.createElement('div');
+                        row.classList.add('row');
+    
+                        data[key].forEach(project => {
+                            const projectCard = `
+                                <div class="col-md-4">
+                                    <div class="card mb-4 text-white bg-dark" onclick="window.location.href='${project.link}'">
+                                        <div class="card-image bg-dark">
+                                            <img src="${project.image}" class="card-img-top" alt="${project.title}">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">${project.short_title || project.title}</h5>
+                                            <p class="card-year">${project.year}</p>
+                                            <div class="card-body-hidden">
+                                                <div class="card-description">
+                                                    <p class="card-text">${project.description}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            row.innerHTML += projectCard;
+                        });
+    
+                        section.appendChild(row);
+                        container.appendChild(section);
+                    }
+    
+                    // Add JavaScript to dynamically set max-height
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(card => {
+                        const hiddenBody = card.querySelector('.card-body-hidden');
+                        card.addEventListener('mouseenter', () => {
+                            hiddenBody.style.maxHeight = hiddenBody.scrollHeight + 'px';
+                        });
+                        card.addEventListener('mouseleave', () => {
+                            hiddenBody.style.maxHeight = '0';
+                        });
+                    });
+                });
+        });
+    </script>
 </body>
 </html>

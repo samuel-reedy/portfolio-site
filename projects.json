@@ -1,0 +1,67 @@
+{
+    "university_projects": [
+        {
+            "title": "A Convolutional Neural Network That Extracts Depth from Images",
+            "short_title": "CNN Depth Extraction",
+            "description": "University Honours Research Project that explored the use of a bio-inspired Convolutional Neural Network to extract depth from images. The project was completed in 2023 and was supervised by Luke Hallum",
+            "image": "static/images/Model_step_through.png",
+            "link": "#",
+            "year": 2023
+        },
+        {
+            "title": "Anthropromorphic Soft Robotics Hand",
+            "short_title": "Soft Robotics Hand",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/Final Fingers.jpg",
+            "link": "#",
+            "year": 2023
+        }
+    ],
+    "work_experience": [
+        {
+            "title": "Maui63",
+            "short_title": "Maui63",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/maui63_drone.jpg",
+            "link": "#",
+            "year": 2024
+        }
+    ],
+    "other": [
+        {
+            "title": "Putt Putt Perfection",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/putt_putt_perfection.png",
+            "link": "https://lucas-riedlshah.itch.io/putt-putt-perfection",
+            "year": 2023
+        },
+        {
+            "title": "Dice Automata",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/dice_automata.png",
+            "link": "https://reedsman.itch.io/dice-automata",
+            "year": 2022
+        },
+        {
+            "title": "Campus",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/campus.png",
+            "link": "https://lucas-riedlshah.itch.io/campus",
+            "year": 2023
+        },
+        {
+            "title": "Gem Dive",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/gem_dive.png",
+            "link": "https://lucas-riedlshah.itch.io/gem-dive",
+            "year": 2024
+        },
+        {
+            "title": "Chroma Chameleon",
+            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+            "image": "static/images/chroma_chameleon.png",
+            "link": "https://taintedflamegames.itch.io/chroma-chameleon",
+            "year": 2021
+        }
+    ]
+}
