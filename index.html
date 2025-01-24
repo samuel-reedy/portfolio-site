@@ -151,7 +151,7 @@
     
                     projectsData[key].forEach(project => {
                         const tags = project.tags.map(tag => {
-                            const tagColor = Object.entries(tagsData).find(([category, { tags }]) => tags.includes(tag))[1].color;
+                            const tagColor = Object.entries(tagsData).find(([category, { tags }]) => tags.includes(tag))[1].selected_colour;
                             return `<span style="background-color: ${tagColor};">${tag}</span>`;
                         }).join('');
                         const projectCard = `

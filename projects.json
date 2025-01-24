@@ -7,7 +7,7 @@
             "image": "static/images/Model_step_through.png",
             "link": "#",
             "year": 2023,
-            "tags": ["Python", "Keras", "CNN"]
+            "tags": ["Python", "CNN"]
         },
         {
             "title": "Anthropromorphic Soft Robotics Hand",
