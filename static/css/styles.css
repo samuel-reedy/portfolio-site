@@ -19,7 +19,7 @@ html {
     overflow: hidden;
     background-color: rgb(19, 19, 19);
     border: 0px;
-    overflow: visible;
+    overflow: hidden;
     aspect-ratio: 1/1;
 }
 
@@ -28,6 +28,11 @@ html {
     height: 100%;
     object-fit: cover;
     opacity: 0.1;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 .card-body-hidden {
@@ -49,6 +54,13 @@ html {
     text-transform: uppercase;
     font-style: italic;
     color: #3b38ff;
+}
+
+.card-tags-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
 }
 
 .card-tags {
@@ -74,12 +86,12 @@ html {
 
 
 .card-text {
-    color: rgb(124, 124, 124);
+    color: rgb(180, 180, 180);
 }
 
 .card-icon {
     position: absolute;
-    bottom: 15px;
+    top: 15px;
     right: 15px;
     font-size: 1.5rem;
     color: white;
@@ -96,4 +108,47 @@ html {
 
 .btn-primary i {
     margin-left: 5px; /* Add some space between the icon and the text */
+}
+
+.uni-title {
+    color: #3b38ff; /* Example color for University projects */
+}
+
+.work-title {
+    color: #eb00c4; /* Example color for Work projects */
+}
+
+.game-dev-title {
+    color: #00af97; /* Example color for Game Dev projects */
+}
+
+.uni-title {
+    color: #3b38ff; /* Example color for University projects */
+}
+
+.work-title {
+    color: #eb00c4; /* Example color for Work projects */
+}
+
+.game-dev-title {
+    color: #00af97; /* Example color for Game Dev projects */
+}
+
+.uni-icon {
+    color: #3b38ff; /* Example color for University projects */
+}
+
+.work-icon {
+    color: #eb00c4; /* Example color for Work projects */
+}
+
+.game-dev-icon {
+    color: #00af97; /* Example color for Game Dev projects */
+}
+
+.name {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold; 
+    color: #3b38ff;
+    text-transform: uppercase;
 }

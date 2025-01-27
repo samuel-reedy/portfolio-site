@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 tagButton.classList.add('btn', 'btn-primary', 'm-1');
                 tagButton.textContent = tag;
                 tagButton.style.color = 'white';
-                tagButton.style.borderColor = unselected_colour;
+                tagButton.style.borderColor = selected_colour;
                 tagButton.style.backgroundColor = unselected_colour
                 tagButton.innerHTML = ` ${tag} <i class="fas fa-plus"></i>`;
                 tagButton.addEventListener('click', () => toggleTag(tag, tagButton, selected_colour, unselected_colour));
@@ -87,12 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card mb-4 shadow" onclick="window.location.href='${project.link}'">
                             <img src="${project.image}" class="card-img" alt="${project.title}">
                             <div class="card-img-overlay">
-                                <i class="fas ${project.icon} card-icon"></i>
-                                <h5 class="card-title"> ${project.short_title || project.title}</h5>
+                                <i class="fas ${project.icon} card-icon ${project.tags.includes('University') ? 'uni-icon' : project.tags.includes('Work') ? 'work-icon' : project.tags.includes('Game Dev') ? 'game-dev-icon' : ''}"></i>
+                                <h5 class="card-title ${project.tags.includes('University') ? 'uni-title' : project.tags.includes('Work') ? 'work-title' : project.tags.includes('Game Dev') ? 'game-dev-title' : ''}"> ${project.short_title || project.title}</h5>
                                 <div class="card-description">
                                     <p class="card-text">${project.description}</p>
                                 </div>
-                                <div class="card-tags">${tags}</div>
+                                <div class="card-tags-container">
+                                    <div class="card-tags">${tags}</div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,13 @@
 {
+    "type": {
+        "selected_colour": "#eb00c4",
+        "unselected_colour": "#222222",
+        "tags": [
+            "University",
+            "Work",
+            "Game Dev"
+        ]
+    },
     "languages": {
         "selected_colour": "#00af97",
         "unselected_colour": "#222222",
@@ -19,7 +28,6 @@
             "Unity",
             "Inventor",
             "Fusion 360",
-            "Verilog",
             "Ansys CFX",
             "Matlab",
             "Ki CAD"
@@ -32,10 +40,8 @@
             "Agile",
             "Scrum",
             "3D Printing",
-            "Soldering",
             "Docker",
-            "CNN",
-            "Game Dev"
+            "CNN"
         ]
     }
 }

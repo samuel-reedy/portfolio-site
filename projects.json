@@ -1,13 +1,46 @@
 {
+    "work_experience": [
+        {
+            "title": "Revive Our Gulf",
+            "short_title": "Revive Our Gulf",
+            "description": "Built and integrated an underwater camera system to monitor and track the position of the insaive seaweed species Caulerpa.",
+            "image": "static/images/ROV.jpg",
+            "link": "#",
+            "year": 2024,
+            "tags": ["Work", "Python", "C++", "HTML / CSS", "Javascript", "Ki CAD", "3D Printing", "Docker"],
+            "icon": "fa-briefcase"
+        },
+        {
+            "title": "Maui63",
+            "short_title": "Maui63",
+            "description": "Helped develop the platform and software for a Jetson Orin Computer Vision system to detect and track airborne obstacles for a drone.",
+            "image": "static/images/maui63_drone.jpg",
+            "link": "#",
+            "year": 2024,
+            "tags": ["Work", "Python", "Inventor", "CNN", "3D Printing"],
+            "icon": "fa-briefcase"
+        },
+        {
+            "title": "Hydracel",
+            "short_title": "Cool Energy Storage",
+            "description": "Designed and prototyped a Cool Thermal Energy Storage (CTES) system using water's latent heat for solar energy storage",
+            "image": "static/images/hydracel.jpg",
+            "link": "#",
+            "year": 2023,
+            "tags": ["Work", "C", "Fusion 360", "Ansys CFX", "3D Printing"],
+            "icon": "fa-briefcase"
+        }
+        
+    ],
     "university_projects": [
         {
             "title": "A Convolutional Neural Network That Extracts Depth from Images",
             "short_title": "CNN Depth Extraction",
             "description": "University Honours Research Project that explored the use of a bio-inspired Convolutional Neural Network to extract depth from images. The project was completed in 2023 and was supervised by Luke Hallum",
             "image": "static/images/Model_step_through.png",
-            "link": "#",
+            "link": "static/pdf/MECHENG 700 - Final Report - sree205.pdf",
             "year": 2023,
-            "tags": ["Python", "CNN"],
+            "tags": ["University", "Python", "CNN", "Matlab"],
             "icon": "fa-graduation-cap"
         },
         {
@@ -15,22 +48,10 @@
             "short_title": "Soft Robotics Hand",
             "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
             "image": "static/images/Final Fingers.jpg",
-            "link": "#",
+            "link": "static/pdf/MECHENG 736 - Biomechatronics Project Report - sree205.pdf",
             "year": 2023,
-            "tags": ["Inventor", "3D Printing"],
+            "tags": ["University", "Inventor", "3D Printing"],
             "icon": "fa-graduation-cap"
-        }
-    ],
-    "work_experience": [
-        {
-            "title": "Maui63",
-            "short_title": "Maui63",
-            "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
-            "image": "static/images/maui63_drone.jpg",
-            "link": "#",
-            "year": 2024,
-            "tags": ["Python", "Inventor", "CNN", "3D Printing"],
-            "icon": "fa-briefcase"
         }
     ],
     "other": [
@@ -40,7 +61,7 @@
             "image": "static/images/putt_putt_perfection.png",
             "link": "https://lucas-riedlshah.itch.io/putt-putt-perfection",
             "year": 2023, 
-            "tags": ["Unity", "C#", "Game Dev"],
+            "tags": ["Game Dev", "Unity", "C#"],
             "icon": "fa-gamepad"
         },
         {
@@ -49,7 +70,7 @@
             "image": "static/images/dice_automata.png",
             "link": "https://reedsman.itch.io/dice-automata",
             "year": 2022, 
-            "tags": ["Unity", "C#", "Game Dev"],
+            "tags": ["Game Dev", "Unity", "C#"],
             "icon": "fa-gamepad"
         },
         {
@@ -58,7 +79,7 @@
             "image": "static/images/campus.png",
             "link": "https://lucas-riedlshah.itch.io/campus",
             "year": 2023, 
-            "tags": ["Unity", "C#", "Game Dev"],
+            "tags": ["Game Dev", "Unity", "C#"],
             "icon": "fa-gamepad"
         },
         {
@@ -67,7 +88,7 @@
             "image": "static/images/gem_dive.png",
             "link": "https://lucas-riedlshah.itch.io/gem-dive",
             "year": 2024, 
-            "tags": ["Unity", "C#", "Game Dev"],
+            "tags": ["Game Dev", "Unity", "C#"],
             "icon": "fa-gamepad"
         },
         {
@@ -76,7 +97,7 @@
             "image": "static/images/chroma_chameleon.png",
             "link": "https://taintedflamegames.itch.io/chroma-chameleon",
             "year": 2021, 
-            "tags": ["Unity", "C#", "Game Dev"],
+            "tags": ["Game Dev", "Unity", "C#"],
             "icon": "fa-gamepad"
         }
     ]
