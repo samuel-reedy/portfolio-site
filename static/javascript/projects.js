@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         const tagButton = document.createElement('button');
                         tagButton.classList.add('btn', 'btn-primary', 'm-1');
                         tagButton.textContent = tag;
-                        tagButton.style.color = 'white';
+                        tagButton.style.color = selected_colour;
                         tagButton.style.borderColor = selected_colour;
                         tagButton.style.backgroundColor = unselected_colour;
-                        tagButton.innerHTML = ` ${tag} <i class="fas fa-plus"></i>`;
+                        tagButton.innerHTML = ` ${tag} <i class="fas fa-plus" style="color: ${selected_colour};"></i>`;
                         tagButton.addEventListener('click', () => toggleTag(tag, tagButton, selected_colour, unselected_colour));
                         filterContainer.appendChild(tagButton);
                     });
@@ -44,15 +44,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         selectedTags.delete(tag);
                         button.classList.add('btn-primary');
                         button.style.backgroundColor = unselected_colour;
-                        button.style.color = 'white';
-                        button.innerHTML = ` ${tag} <i class="fas fa-plus"></i>`;
+                        button.style.color = selected_colour;
+                        button.innerHTML = ` ${tag} <i class="fas fa-plus" style="color: ${selected_colour};"></i>`;
                     } else {
                         selectedTags.add(tag);
                         button.classList.remove('btn-primary');
                         button.classList.add('btn-primary');
                         button.style.backgroundColor = selected_colour;
                         button.style.color = 'white';
-                        button.innerHTML = `${tag} <i class="fas fa-check"></i>`;
+                        button.innerHTML = `${tag} <i class="fas fa-plus" style="color: white;"></i>`;
                     }
                     filterProjects();
                 }
@@ -80,11 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     }).join('');
 
                     const projectRow = `
-                        <div class="card p-3 mb-4">
+                        <div class="card p-3 mb-5">
                             <div class="row project-row">
-                                <div class="col-12 mb-2 d-flex justify-content-between align-items-center">
-                                    <h2 class="card-title data-title">${project.title}</h2>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <h2 class="card-title">${project.title}</h2>
                                     <div class="project-tags">${tags}</div>
+                                </div>
+                                <div class="col-12 mb-2 d-flex justify-content-between align-items-center title">
+                                    <p class="">${project.year}</p>
                                 </div>
                                 ${project.images.map((image, index) => `
                                     <div class="col-md-4 d-flex flex-column align-items-start">

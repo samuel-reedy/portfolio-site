@@ -15,7 +15,6 @@ html {
 .name {
     font-size: 3rem; /* Adjust the size as needed */
     font-weight: bold; 
-    color: #3b38ff;
     text-transform: uppercase;
 }
 
@@ -34,7 +33,11 @@ html {
     margin: 0;
 }
 
-.card:hover .card-img {
+.title {
+    border-bottom: 2px solid rgb(51, 51, 51); /* Add a line underneath */
+}
+
+.card-img:hover {
     transform: scale(1.1); /* Slight zoom effect */
 }
 
@@ -110,10 +113,10 @@ html {
 /* Description title container styles */
 .description-title-container {
     color: rgb(51, 51, 51);
-    display: inline-block; /* Make the container as wide as the text */
-    font-size: 0.875rem; /* Make the text smaller */
+    display: inline-block;
+    /* font-size: 0.875rem; */
     font-weight: bold;
-    border-bottom: 1px solid rgb(51, 51, 51); /* Add a line underneath */
+    border-bottom: 1px solid rgb(51, 51, 51);
 }
 
 /* Button styles */
@@ -123,9 +126,11 @@ html {
 
 .btn-primary {
     background-color: inherit; /* Ensure the button color is inherited */
-    color: rgb(255, 255, 255);
+    color: inherit; /* Ensure the text color is inherited */
+    border-color: inherit; /* Ensure the border color is inherited */
 }
 
 .btn-primary i {
     margin-left: 5px; /* Add some space between the icon and the text */
+    color: inherit; /* Ensure the icon color is inherited */
 }
