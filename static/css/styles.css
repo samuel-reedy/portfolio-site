@@ -13,9 +13,19 @@ html {
 
 /* Name styles */
 .name {
-    font-size: 3rem; /* Adjust the size as needed */
+    font-family: 'Teko', sans-serif;
+    font-size: 5rem; /* Adjust the size as needed */
     font-weight: bold; 
     text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+                 1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+    letter-spacing: 0.1em;
+}
+
+.position {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    font-weight: bold;
 }
 
 /* Card styles */
