@@ -1,0 +1,17 @@
+{
+    "title": "A Convolutional Neural Network That Extracts Depth from Images",
+    "short_title": "CNN Depth Extraction",
+    "description": "University Honours Research Project that explored the use of a bio-inspired Convolutional Neural Network to extract depth from images. The project was completed in 2023 and was supervised by Luke Hallum",
+    "images": [
+        "static/images/Model_step_through.png",
+        "static/images/Model_step_through.png",
+        "static/images/Model_step_through.png"
+    ],
+    "what": "Built and integrated an underwater camera system to monitor and track the position of the insaive seaweed species Caulerpa.",
+    "how": "The camera system was built using a Raspberry Pi and a camera module. The camera was mounted on a custom 3D printed mount that was attached to the ROV. The camera was then connected to the Raspberry Pi and the video feed was streamed to a laptop on the surface.",
+    "result": "The camera system was able to successfully track the position of the Caulerpa and provide real-time data to the research team. This data was then used to develop a plan to remove the invasive species from the Gulf.",
+    "link": "static/pdf/MECHENG 700 - Final Report - sree205.pdf",
+    "year": 2023,
+    "tags": ["University", "Python", "CNN", "Matlab"],
+    "icon": "fa-graduation-cap"
+}

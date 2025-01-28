@@ -1,7 +1,7 @@
 {
     "type": {
         "selected_colour": "#eb00c4",
-        "unselected_colour": "#222222",
+        "unselected_colour": "#eb00c4",
         "tags": [
             "University",
             "Work",
@@ -10,7 +10,7 @@
     },
     "languages": {
         "selected_colour": "#00af97",
-        "unselected_colour": "#222222",
+        "unselected_colour": "#00af97",
         "tags": [
             "C",
             "C++",
@@ -23,7 +23,7 @@
     },
     "software": {
         "selected_colour": "#008851",
-        "unselected_colour": "#222222",
+        "unselected_colour": "#008851",
         "tags": [
             "Unity",
             "Inventor",
@@ -35,7 +35,7 @@
     },
     "other": {
         "selected_colour": "#c1554e",
-        "unselected_colour": "#222222",
+        "unselected_colour": "#c1554e",
         "tags": [
             "Agile",
             "Scrum",

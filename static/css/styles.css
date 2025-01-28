@@ -1,7 +1,7 @@
 /* General styles */
 body {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
@@ -11,28 +11,31 @@ html {
     overflow-y: scroll;
 }
 
-.card {
-    position: relative;
-    cursor: pointer;
-    transition: all 0.6s ease;
-    width: 100%;
-    overflow: hidden;
-    background-color: rgb(19, 19, 19);
-    border: 0px;
-    overflow: hidden;
-    aspect-ratio: 1/1;
+/* Name styles */
+.name {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold; 
+    color: #3b38ff;
+    text-transform: uppercase;
 }
 
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.1;
-    transition: transform 0.3s ease;
+/* Card styles */
+.card {
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    max-height: 1000px;
+    overflow: hidden;
+    border: 0;
+}
+
+.card.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .card:hover .card-img {
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 .card-body-hidden {
@@ -45,15 +48,12 @@ html {
     display: block;
 }
 
-.card-year {
-    color: rgb(201, 70, 10);
-}
-
 .card-title {
     font-weight: bold;
-    text-transform: uppercase;
-    font-style: italic;
-    color: #3b38ff;
+}
+
+.card-year {
+    color: rgb(201, 70, 10);
 }
 
 .card-tags-container {
@@ -62,28 +62,6 @@ html {
     width: 100%;
     padding-bottom: 10px;
 }
-
-.card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition */
-}
-
-.card-tags span {
-    display: flex;
-    flex-wrap: wrap;
-    color: rgb(255, 255, 255);
-    padding: 1px 8px;
-    border-radius: 5px;
-
-}
-
-.card:hover .card-tags {
-    opacity: 1; /* Fade in on hover */
-}
-
 
 .card-text {
     color: rgb(180, 180, 180);
@@ -97,58 +75,57 @@ html {
     color: white;
 }
 
+/* Image container styles */
+.image-container {
+    overflow: hidden;
+}
+
+.card-img {
+    transition: transform 0.6s ease;
+    overflow: hidden;
+    aspect-ratio: 4/3; 
+    object-fit: cover;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Project tags styles */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .project-tags {
+    opacity: 1;
+}
+
+.tag {
+    padding: 1px 8px;
+    border-radius: 5px;
+}
+
+/* Description title container styles */
+.description-title-container {
+    color: rgb(51, 51, 51);
+    display: inline-block; /* Make the container as wide as the text */
+    font-size: 0.875rem; /* Make the text smaller */
+    font-weight: bold;
+    border-bottom: 1px solid rgb(51, 51, 51); /* Add a line underneath */
+}
+
+/* Button styles */
 #filter-tags .btn {
     cursor: pointer;
 }
 
 .btn-primary {
     background-color: inherit; /* Ensure the button color is inherited */
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .btn-primary i {
     margin-left: 5px; /* Add some space between the icon and the text */
-}
-
-.uni-title {
-    color: #3b38ff; /* Example color for University projects */
-}
-
-.work-title {
-    color: #eb00c4; /* Example color for Work projects */
-}
-
-.game-dev-title {
-    color: #00af97; /* Example color for Game Dev projects */
-}
-
-.uni-title {
-    color: #3b38ff; /* Example color for University projects */
-}
-
-.work-title {
-    color: #eb00c4; /* Example color for Work projects */
-}
-
-.game-dev-title {
-    color: #00af97; /* Example color for Game Dev projects */
-}
-
-.uni-icon {
-    color: #3b38ff; /* Example color for University projects */
-}
-
-.work-icon {
-    color: #eb00c4; /* Example color for Work projects */
-}
-
-.game-dev-icon {
-    color: #00af97; /* Example color for Game Dev projects */
-}
-
-.name {
-    font-size: 3rem; /* Adjust the size as needed */
-    font-weight: bold; 
-    color: #3b38ff;
-    text-transform: uppercase;
 }

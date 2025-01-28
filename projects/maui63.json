@@ -1,0 +1,26 @@
+{
+    "title": "Maui63",
+    "short_title": "Maui63",
+    "description": "Helped develop the platform and software for a Jetson Orin Computer Vision system to detect and track airborne obstacles for a drone.",
+    "images": [
+        "static/images/maui63/platform.jpg",
+        "static/images/maui63/drone.jpg",
+        "static/images/maui63/ground_station.jpg"
+    ],
+    "what": [
+        "Design and develope a drone-mounted 180 degree camera system for the Jetson Orin NX.",
+        "Focus on detect-and-avoid functionality, long-range communication, and real-time data processing."
+
+    ],
+    "how": [
+        "Integrated RPI HQ and Basler cameras, DLB communication modules, and a custom GStreamer pipelines for efficient operation."
+    ],
+    "result": [
+        "Achieved reliable detecting performance with high-quality image processing.",
+        "Enabled long-range communication up to 10 km with minimal processing overhead."
+
+    ],
+    "year": 2024,
+    "tags": ["Work", "Python", "Inventor", "CNN", "3D Printing"],
+    "icon": "fa-briefcase"
+}

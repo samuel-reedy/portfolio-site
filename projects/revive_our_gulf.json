@@ -1,0 +1,22 @@
+{
+    "title": "Revive Our Gulf",
+    "description": "Built and integrated an underwater camera system to monitor and track the position of the insaive seaweed species Caulerpa.",
+    "images": [
+        "static/images/revive our gulf/ROV.jpg",
+        "static/images/revive our gulf/internals.jpg",
+        "static/images/revive our gulf/UI.png"
+    ],
+    "what": [
+        "Develop and integrate a camera system to monitor and track the location of the invasive seaweed species Caulerpa."
+    ],
+    "how": [
+        "Utilised Python to capture buffer data from the camera and stream it to a host computer.",
+        "Developed and refined the GPX recording software in C++ to accurately caputre the ROVs DVL estimated location"
+    ],
+    "result": [
+        "The ROV was able to capture high definition images of Caulerpa, and return to the same location with a 100% success rate"
+    ],
+    "year": 2025,
+    "tags": ["Work", "Python", "C++", "HTML / CSS", "Javascript", "Ki CAD", "3D Printing", "Docker"],
+    "icon": "fa-briefcase"
+}
