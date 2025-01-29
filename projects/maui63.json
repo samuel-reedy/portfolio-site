@@ -4,8 +4,8 @@
     "description": "Helped develop the platform and software for a Jetson Orin Computer Vision system to detect and track airborne obstacles for a drone.",
     "images": [
         "static/images/maui63/platform.jpg",
-        "static/images/maui63/drone.jpg",
-        "static/images/maui63/ground_station.jpg"
+        "static/images/maui63/drone_setup.jpg",
+        "static/images/maui63/ground_setup.jpg"
     ],
     "what": [
         "Design and develope a drone-mounted 180 degree camera system for the Jetson Orin NX.",
