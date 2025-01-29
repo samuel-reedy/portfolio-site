@@ -1,0 +1,9 @@
+{
+    "title": "Putt Putt Perfection",
+    "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+    "image": "static/images/putt_putt_perfection.png",
+    "link": "https://lucas-riedlshah.itch.io/putt-putt-perfection",
+    "year": 2023,
+    "tags": ["Game Dev", "Unity", "C#"],
+    "icon": "fa-gamepad"
+}

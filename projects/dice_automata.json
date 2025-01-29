@@ -1,0 +1,10 @@
+{
+    "title": "Dice Automata",
+    "short_title": "CNN Depth Extraction",
+    "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+    "image": "static/images/dice_automata.png",
+    "link": "https://reedsman.itch.io/dice-automata",
+    "year": 2022,
+    "tags": ["Game Dev", "Unity", "C#"],
+    "icon": "fa-gamepad"
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Campus",
+    "short_title": "CNN Depth Extraction",
+    "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+    "image": "static/images/campus.png",
+    "link": "https://lucas-riedlshah.itch.io/campus",
+    "year": 2023,
+    "tags": ["Game Dev", "Unity", "C#"],
+    "icon": "fa-gamepad"
+}

@@ -2,23 +2,7 @@
     "title": "Anthropromorphic Soft Robotics Hand",
     "short_title": "Soft Robotics Hand",
     "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
-    "images": [
-        "static/images/mecheng 736/TPU Initial.png",
-        "static/images/mecheng 736/Casing Initial.png",
-        "static/images/mecheng 736/Final Fingers.jpg"
-    ],
-    "what": [
-        "Design and construct a robotic hand that is capable of picking up a variety of items",
-        "Additional focus on Anthropromorphic design and soft finger 3D printing"
-    ],
-    "how": [
-        "Use of TPU filament for the phalanges and cast silicone for the contact surfaces.",
-        "Models all designed in Autodesk Inventor.",
-        "Dyneema cord tendons in a whiffle tree configuration controlled by a single servo motor to achieve underactued contraction"
-    ],
-    "result": [
-        "The hand was able to picked up all items, whilst being lightweight with a high degree of dexterity."
-    ],
+    "image": "static/images/mecheng_736/Final Fingers.jpg",
     "link": "static/pdf/MECHENG 736 - Biomechatronics Project Report - sree205.pdf",
     "year": 2023,
     "tags": ["University", "Inventor", "3D Printing"],

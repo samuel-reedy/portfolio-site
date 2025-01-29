@@ -2,11 +2,7 @@
     "title": "Cool Energy Storage - Hydracel",
     "short_title": "Cool Energy Storage",
     "description": "Designed and prototyped a Cool Thermal Energy Storage (CTES) system using water's latent heat for solar energy storage",
-    "images": [
-        "static/images/hydracel/concept.png",
-        "static/images/hydracel/data logger.jpg",
-        "static/images/hydracel/prototype.jpg"
-    ],
+    "image": "static/images/hydracel/concept.png",
     "what": [
         "Design and prototype a Cool Thermal Energy Storage (CTES) system for solar energy storage using water's latent heat of fusion."
     ],
@@ -17,6 +13,7 @@
         "Improved CTES system efficiency by 250% through advanced analysis and optimisation.",
         "Delivered a validated prototype with accurate performance monitoring and user-friendly control."       
     ],
+    "link": "#",
     "year": 2023,
     "tags": ["Work", "C", "Fusion 360", "Ansys CFX", "3D Printing"],
     "icon": "fa-briefcase"

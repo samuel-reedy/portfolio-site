@@ -28,46 +28,30 @@ html {
     font-weight: bold;
 }
 
-/* Card styles */
 .card {
-    transition: opacity 0.5s ease, max-height 0.5s ease;
-    max-height: 1000px;
-    overflow: hidden;
-    border: 0;
     border-radius: 20px;
-}
-
-.card.hidden {
-    opacity: 0;
-    max-height: 0;
-    padding: 0;
-    margin: 0;
-}
-
-.title {
-    border-bottom: 2px solid rgb(51, 51, 51); /* Add a line underneath */
-}
-
-.card-img:hover {
-    transform: scale(1.1); /* Slight zoom effect */
-}
-
-.card-body-hidden {
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease;
-}
-
-.card-footer small {
-    display: block;
+    border: none;
 }
 
 .card-title {
     font-weight: bold;
+    font-size: 1.5rem; /* Adjust the size as needed */
 }
 
-.card-year {
-    color: rgb(201, 70, 10);
+.title-featured {
+    color: rgb(255, 255, 255); /* Change to desired color for featured title */
+}
+
+.title-other {
+    color: rgb(0, 0, 0); /* Change to desired color for other title */
+}
+
+/* Inherit styles from .title */
+.title-featured,
+.title-other {
+    font-weight: bolder;
+    font-size: 3rem; /* Adjust the size as needed */
 }
 
 .card-tags-container {
@@ -78,7 +62,7 @@ html {
 }
 
 .card-text {
-    color: rgb(180, 180, 180);
+    color: rgb(0, 0, 0);
 }
 
 .card-icon {
@@ -90,15 +74,16 @@ html {
 }
 
 /* Image container styles */
-.image-container {
-    overflow: hidden;
+.project-info-container {
+    width: 100%;
+    padding: 10px;
 }
 
-.card-img {
+.card-img-top {
     transition: transform 0.6s ease;
     overflow: hidden;
-    aspect-ratio: 1/1; 
     object-fit: cover;
+    aspect-ratio: 16/9;
     background-color: rgb(255, 255, 255);
 }
 
@@ -119,15 +104,8 @@ html {
 .tag {
     padding: 1px 8px;
     border-radius: 5px;
-}
-
-/* Description title container styles */
-.description-title-container {
-    color: rgb(51, 51, 51);
-    display: inline-block;
-    /* font-size: 0.875rem; */
-    font-weight: bold;
-    border-bottom: 1px solid rgb(51, 51, 51);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Button styles */
@@ -135,14 +113,32 @@ html {
     cursor: pointer;
 }
 
-.btn-primary {
-    background-color: inherit; /* Ensure the button color is inherited */
-    color: inherit; /* Ensure the text color is inherited */
-    border-color: inherit; /* Ensure the border color is inherited */
+.featured-projects {
+    background-color: rgb(17,24,39);
 }
 
-.btn-primary i {
-    margin-left: 5px; /* Add some space between the icon and the text */
-    color: inherit; /* Ensure the icon color is inherited */
+.other-projects {
+    background-color: rgb(255, 255, 255);
 }
 
+.card-project-other {
+    border: #000000 4px solid;
+}
+
+.card-hover{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: scale(1.05);
+}
+
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-img-fit{
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}

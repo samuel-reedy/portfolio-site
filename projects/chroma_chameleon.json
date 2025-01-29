@@ -1,0 +1,10 @@
+{
+    "title": "Chroma Chameleon",
+    "short_title": "CNN Depth Extraction",
+    "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+    "image": "static/images/chroma_chameleon.png",
+    "link": "https://taintedflamegames.itch.io/chroma-chameleon",
+    "year": 2021,
+    "tags": ["Game Dev", "Unity", "C#"],
+    "icon": "fa-gamepad"
+}

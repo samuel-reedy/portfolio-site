@@ -1,11 +1,8 @@
 {
     "title": "Revive Our Gulf",
     "description": "Built and integrated an underwater camera system to monitor and track the position of the insaive seaweed species Caulerpa.",
-    "images": [
-        "static/images/revive our gulf/ROV.jpg",
-        "static/images/revive our gulf/internals.jpg",
-        "static/images/revive our gulf/UI.png"
-    ],
+    "background_colour": "#f0f0f0",
+    "image": "static/images/revive our gulf/ROV.jpg",
     "what": [
         "Develop and integrate a camera system to capture high resolution transects of the sea floor.",
         "Improve and finalise an Blue OS GPX Extension to record the ROVs estimated location"
@@ -17,6 +14,7 @@
     "result": [
         "The ROV was able to capture high definition images of Caulerpa, and return to the same location with a 100% success rate"
     ],
+    "link": "#",
     "year": 2025,
     "tags": ["Work", "Python", "C++", "HTML / CSS", "Javascript", "Ki CAD", "3D Printing", "Docker"],
     "icon": "fa-briefcase"

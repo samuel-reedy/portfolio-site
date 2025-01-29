@@ -1,0 +1,10 @@
+{
+    "title": "Gem Dive",
+    "short_title": "CNN Depth Extraction",
+    "description": "University Biomechtronics Project that explored the design and development of a print in place robotics fingers.",
+    "image": "static/images/gem_dive.png",
+    "link": "https://lucas-riedlshah.itch.io/gem-dive",
+    "year": 2024,
+    "tags": ["Game Dev", "Unity", "C#"],
+    "icon": "fa-gamepad"
+}
