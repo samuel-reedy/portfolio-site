@@ -7,11 +7,12 @@
         "static/images/revive our gulf/UI.png"
     ],
     "what": [
-        "Develop and integrate a camera system to monitor and track the location of the invasive seaweed species Caulerpa."
+        "Develop and integrate a camera system to capture high resolution transects of the sea floor.",
+        "Improve and finalise an Blue OS GPX Extension to record the ROVs estimated location"
     ],
     "how": [
         "Utilised Python to capture buffer data from the camera and stream it to a host computer.",
-        "Developed and refined the GPX recording software in C++ to accurately caputre the ROVs DVL estimated location"
+        "Developed and refined the GPX recording software in C++ to accurately caputre the ROVs DVL estimated location for transects."
     ],
     "result": [
         "The ROV was able to capture high definition images of Caulerpa, and return to the same location with a 100% success rate"
