@@ -65,10 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Error loading data:', error));
 
     let isTransitioning = false;
+    let lastActiveIndex = 0;
 
     function showWorkInfo(index) {
         if (isTransitioning) return; // Ignore clicks during transition
-    
+        if (index === lastActiveIndex) return; // Ignore clicks on the active work info
         isTransitioning = true; // Set the flag to indicate a transition is in progress
     
         const workInfos = document.querySelectorAll('.work-info');
@@ -77,40 +78,56 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the current height of the container
         const currentHeight = workInfoContainer.offsetHeight;
     
-        // Show the selected work info and get its height
-        workInfos.forEach((info, i) => {
-            if (i === index) {
-                info.style.display = 'block';
-                info.style.opacity = 0;
-                info.style.transform = 'translateX(-30%)';
-            } else {
-                info.style.display = 'none';
-            }
-        });
+        // Hide the currently active work info with a transition
+        const activeInfo = Array.from(workInfos).find(info => info.style.display === 'block');
+        if (activeInfo) {
+            activeInfo.style.transition = 'opacity 0.2s, transform 0.2s';
+            activeInfo.style.opacity = 0;
+            activeInfo.style.transform = 'translateX(-30%)';
+        }
     
-        // Get the new height of the container
-        const newHeight = workInfos[index].offsetHeight;
-    
-        // Set the container height to the current height and then transition to the new height
-        workInfoContainer.style.height = `${currentHeight}px`;
+        // After the hide transition, show the new work info
         setTimeout(() => {
-            workInfoContainer.style.transition = 'height 0.5s ease';
-            workInfoContainer.style.height = `${newHeight}px`;
-        }, 10);
+            if (activeInfo) activeInfo.style.display = 'none';
     
-        // Transition the opacity and transform of the selected work info
-        setTimeout(() => {
-            workInfos[index].style.transition = 'opacity 0.2s, transform 0.2s';
-            workInfos[index].style.opacity = 1;
-            workInfos[index].style.transform = 'translateX(0)';
-        }, 200);
+            // Show the selected work info and get its height
+            workInfos.forEach((info, i) => {
+                if (i === index) {
+                    info.style.display = 'block';
+                    info.style.opacity = 0;
+                    info.style.transform = 'translateX(-30%)';
+                } else {
+                    info.style.display = 'none';
+                }
+            });
     
-        // Remove the height transition after it's done
-        setTimeout(() => {
-            workInfoContainer.style.transition = '';
-            workInfoContainer.style.height = '';
-            isTransitioning = false; // Reset the flag after the transition is complete
-        }, 400);
+            // Get the new height of the container
+            const newHeight = workInfos[index].offsetHeight;
+    
+            // Set the container height to the current height and then transition to the new height
+            workInfoContainer.style.height = `${currentHeight}px`;
+            setTimeout(() => {
+                workInfoContainer.style.transition = 'height 0.5s ease';
+                workInfoContainer.style.height = `${newHeight}px`;
+            }, 200);
+    
+            // Transition the opacity and transform of the selected work info
+            setTimeout(() => {
+                workInfos[index].style.transition = 'opacity 0.2s, transform 0.2s';
+                workInfos[index].style.opacity = 1;
+                workInfos[index].style.transform = 'translateX(0)';
+            }, 200);
+    
+            // Remove the height transition after it's done
+            setTimeout(() => {
+                workInfoContainer.style.transition = '';
+                workInfoContainer.style.height = '';
+                isTransitioning = false; // Reset the flag after the transition is complete
+            }, 400);
+        }, 200); // Match this timeout with the hide transition duration
+
+        lastActiveIndex = index;
     }
+    
 
 });
