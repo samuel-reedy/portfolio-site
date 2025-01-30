@@ -14,39 +14,45 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg pr-3">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link custom-nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#featured-projects-section">Featured</a>
+                    <a class="nav-link custom-nav-link" href="#about-me">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#other-projects-section">Projects</a>
+                    <a class="nav-link custom-nav-link" href="#work">Work Experience</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link custom-nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="container mt-4" id="home">
+    <div class="container section" id="home">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="name">Hello! I'm <span class="highlight">Samuel Reedy</span></h1>
+            <div class="col-md-12 d-flex align-items-center"></div>
+                <div class="name-container position-relative">
+                    <h1 class="name">Hello! I'm <span class="highlight">Samuel Reedy</span></h1>
+                    <img src="static/images/signature.png" class="signature position-absolute" alt="Signature">
+                </div>
                 <p class="role">Graduate <span class="highlight">Mechatronics Engineer</span> from the University of Auckland</p>
             </div>
         </div>
     </div>
 
 
-    <div class="container mt-4" id="contact">
+    <div class="container section" id="about-me">
         <div class="row">
             <div class="col-md-4">
                 <img src="static/images/Headshot Square.png" class="img-fluid rounded-circle headshot" alt="Samuel Reedy">
@@ -82,7 +88,7 @@
         </div>
     </div>
 
-    <div class="container mt-4">
+    <div class="container section">
         <div class="container" id="work">
             <div class="row" id="work-section">
                 <div class="col-12">
@@ -99,8 +105,8 @@
             </div>
         </div>
 
-        <div class="container"">
-            <div class="row p-5" id="other-projects-section">
+        <div class="container section">
+            <div class="row p-5" id="Projects">
                 <div class="col-12">
                     <h2 class="section-title text-center">.Projects / Coursework</h2>
                 </div>

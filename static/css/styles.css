@@ -7,6 +7,36 @@ body {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: rgb(5,8,22);
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+}
+
+.signature {
+    position: absolute;
+    top: -80%;
+    left: 50%;
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.5; /* Adjust opacity as needed */
+    z-index: -1; /* Ensure it appears behind the text */
+}
+
+
+.custom-nav-link {
+    color: rgb(170,166,195);
+}
+
+.custom-nav-link:hover {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
 /* Name styles */
 .name {
     font-family: 'Poppins', sans-serif;
@@ -14,6 +44,10 @@ body {
     font-size: 4rem; /* Adjust the size as needed */
     font-weight: bold; 
     color: white;
+}
+
+.section {
+    margin-top: 100px;
 }
 
 .highlight {
