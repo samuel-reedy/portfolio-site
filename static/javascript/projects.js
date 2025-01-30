@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     Promise.all([
-        fetch('other_projects.json').then(response => response.json()),
+        fetch('projects.json').then(response => response.json()),
         fetch('tags.json').then(response => response.json())
     ])
     .then(([projectFiles, tagsData]) => {
-        const otherContainer = document.getElementById('other-projects');
+        const otherContainer = document.getElementById('projects');
         const filterContainer = document.getElementById('filter-tags');
         const allTags = new Set();
         let selectedTags = new Set();
@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.log('Project Tags:', projectTags);
                         const matches = [...selectedTags].every(tag => projectTags.includes(tag));
                         if (matches || selectedTags.size === 0) {
-                            card.closest('.col-12, .col-sm-12, .col-md-4').classList.remove('hidden'); // Show the card
+                            card.closest('.col-12, .col-sm-12, .col-md-4, .col-md-6, .col-lg-4').classList.remove('hidden'); // Show the card
                         } else {
-                            card.closest('.col-12, .col-sm-12, .col-md-4').classList.add('hidden'); // Hide the card
+                            card.closest('.col-12, .col-sm-12, .col-md-4, .col-md-6, .col-lg-4').classList.add('hidden'); // Hide the card
                         }
                     });
                 }
@@ -74,16 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 projectsData.forEach(project => {
                     const tags = project.tags.map(tag => {
                         const tagColor = Object.entries(tagsData).find(([category, { tags }]) => tags.includes(tag))[1].selected_colour;
-                        return `<span class="tag" style="background-color: ${tagColor};">${tag}</span>`;
+                        return `<span class="tag" style="color: ${tagColor};">#${tag}</span>`;
                     }).join('');
 
                     const projectRow = `
-                        <div class="col-12 col-sm-12 col-md-4 mb-4 d-flex align-items-stretch">
-                            <div class="card card-project-other card-hover" onclick="window.location.href='${project.link}'">
-                                <img class="card-img card-img-fit" src="${project.image}" alt="${project.title}">
-                                <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
-                                    <h5 class="card-title">${project.title}</h5>
-                                    <div class="project-tags d-flex justify-content-center">${tags}</div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 d-flex">
+                            <div class="card card-hover card-project-other m-0">
+                                <img class="card-img-top" src="${project.image}" alt="${project.title}">
+                                <div class="card-body">
+                                    <h2 class="card-title">${project.title}</h2>
+                                    <p class="card-text">${project.description}</p>
+                                    <div class="project-tags">${tags}</div>
                                 </div>
                             </div>
                         </div>

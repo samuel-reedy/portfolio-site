@@ -1,0 +1,35 @@
+{
+    "title": "Sealegs",
+    "position": "Mechatronics Intern",
+    "company": "Sealegs",
+    "logo": "static/images/sealegs/logo.png",
+    "description": "Led the design and construction of an autonomous system for a small, unmanned surface vehicle (USV).",
+    "background_colour": "#f0f0f0",
+    "image": "static/images/sealegs/USV.jpg",
+    "images": [
+        "static/images/sealegs/USV.jpg",
+        "static/images/sealegs/solar_system.jpg",
+        "static/images/sealegs/testing.jpg"
+    ],
+    "what": [
+        "Led the design and construction of an autonomous system for a small, unmanned surface vehicle (USV).",
+        "Innovated the power system by integrating solar technology, extending operating time by 20 hours and minimising environmental impact.",
+        "Collaborated with multidisciplinary teams to seamlessly integrate the autonomous system into the USV, ensuring cohesive functionality.",
+        "Conducted comprehensive testing, both in lab and field environments, to verify system performance and reliability.",
+        "Utilised Ansys CFX alongside Autodesk Inventor for custom keel modelling and fluid performance analysis, leading to 20% efficiency improvements based on analytical findings."
+    ],
+    "how": [
+        "Designed and constructed the autonomous system using advanced mechatronics principles.",
+        "Integrated solar technology into the power system to extend operating time and reduce environmental impact.",
+        "Worked with multidisciplinary teams to ensure seamless integration of the autonomous system.",
+        "Performed comprehensive testing in both lab and field environments to verify system performance.",
+        "Used Ansys CFX and Autodesk Inventor for custom keel modelling and fluid performance analysis."
+    ],
+    "result": [
+        "Successfully extended the operating time of the USV by 20 hours.",
+        "Achieved 20% efficiency improvements based on analytical findings."
+    ],
+    "link": "#",
+    "period": "11/2021 - 03/2022",
+    "tags": ["Work", "Ansys CFX", "Inventor"]
+}

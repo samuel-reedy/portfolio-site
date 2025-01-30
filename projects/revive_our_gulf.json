@@ -1,8 +1,16 @@
 {
     "title": "Revive Our Gulf",
+    "position": "Mechatronics Engineer",
+    "company": "Revive Our Gulf",
+    "logo": "static/images/revive our gulf/logo.png",
     "description": "Built and integrated an underwater camera system to monitor and track the position of the insaive seaweed species Caulerpa.",
     "background_colour": "#f0f0f0",
     "image": "static/images/revive our gulf/ROV.jpg",
+    "images": [
+        "static/images/revive our gulf/ROV.jpg",
+        "static/images/revive our gulf/internals.jpg",
+        "static/images/revive our gulf/UI.png"
+    ],
     "what": [
         "Develop and integrate a camera system to capture high resolution transects of the sea floor.",
         "Improve and finalise an Blue OS GPX Extension to record the ROVs estimated location"
@@ -15,7 +23,6 @@
         "The ROV was able to capture high definition images of Caulerpa, and return to the same location with a 100% success rate"
     ],
     "link": "#",
-    "year": 2025,
-    "tags": ["Work", "Python", "C++", "HTML / CSS", "Javascript", "Ki CAD", "3D Printing", "Docker"],
-    "icon": "fa-briefcase"
+    "period": "7/2024 - Present ",
+    "tags": ["Work", "Python", "C++", "HTML / CSS", "Javascript", "Ki CAD", "3D Printing", "Docker"]
 }

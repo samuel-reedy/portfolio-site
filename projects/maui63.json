@@ -1,23 +1,29 @@
 {
-    "title": "Drone Camera System - Maui63",
+    "title": "Drone Camera System",
+    "position": "Mechatronics Engineer",
+    "company": "Maui63",
+    "logo": "static/images/maui63/logo.png",
     "description": "Helped develop the platform and software for a Jetson Orin Computer Vision system to detect and track airborne obstacles for a drone.",
     "background_colour": "#f0f0f0",
     "image": "static/images/maui63/drone_setup.jpg",
+    "images": [
+        "static/images/maui63/drone_setup.jpg",
+        "static/images/maui63/platform.jpg",
+        "static/images/maui63/ground_setup.jpg"
+    ],
     "what": [
-        "Design and develope a drone-mounted 180 degree camera system for the Jetson Orin NX.",
+        "Design and develop a drone-mounted 180 degree camera system for the Jetson Orin NX.",
         "Focus on detect-and-avoid functionality, long-range communication, and real-time data processing."
-
     ],
     "how": [
-        "Integrated RPI HQ and Basler cameras, DLB communication modules, and a custom GStreamer pipelines for efficient operation."
+        "Integrated RPI HQ and Basler cameras, DLB communication modules, and custom GStreamer pipelines for efficient operation."
     ],
     "result": [
         "Achieved reliable detecting performance with high-quality image processing.",
         "Enabled long-range communication up to 10 km with minimal processing overhead."
-
     ],
     "link": "#",
-    "year": 2024,
+    "period": "04/2024 - 07/2024",
     "tags": ["Work", "Python", "Inventor", "CNN", "3D Printing"],
     "icon": "fa-briefcase"
 }
