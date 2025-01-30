@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             // Render work buttons and info
                             projectsData.forEach((project, index) => {
                                 const button = document.createElement('button');
-                                button.classList.add('btn', 'btn-work', 'm-1', 'work-button');
+                                button.classList.add('btn', 'btn-work', 'work-button', "btn-block");
                                 button.innerHTML = `
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="col-md-3 d-flex justify-content-center p-0">
-                                            <img src="${project.logo}" alt="${project.title}" class="logo">
+                                    <div class="row align-items-center">
+                                        <div class="col-3 p-2 pl-3">
+                                            <img src="${project.logo}" alt="${project.title}" class="logo img-fluid">
                                         </div>
-                                        <div class="col-md-9 text-left">
+                                        <div class="col-9 text-left">
                                             <p class="primary p-0 m-0">${project.position}</p>
                                             <p class="core p-0 m-0">${project.company}</p>
                                         </div>
@@ -31,9 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 workButtonsContainer.appendChild(button);
 
                                 const workInfo = document.createElement('div');
-                                workInfo.classList.add('card');
-                                workInfo.classList.add('work-info');
-                                workInfo.style.display = index === 0 ? 'block' : 'none';
+                                workInfo.classList.add('card', 'work-info');
+                                if (index !== 0) workInfo.style.display = 'none'; // Hide all except the first one
                                 workInfo.innerHTML = `
                                     <div class="card-body">
                                         <h3 class="primary">${project.position}</h3>
@@ -68,7 +67,26 @@ document.addEventListener('DOMContentLoaded', function() {
     function showWorkInfo(index) {
         const workInfos = document.querySelectorAll('.work-info');
         workInfos.forEach((info, i) => {
-            info.style.display = i === index ? 'block' : 'none';
+            if (i === index) {
+                setTimeout(() => {
+                    info.style.display = 'block';
+                    info.style.opacity = 0;
+                    info.style.transform = 'translateX(-30%)';
+                    setTimeout(() => {
+                        info.style.transition = 'opacity 0.2s, transform 0.2s';
+                        info.style.opacity = 1;
+                        info.style.transform = 'translateX(0)';
+                    }, 200);
+                }, 200);
+            } else {
+                info.style.transition = 'opacity 0.2s, transform 0.2s';
+                info.style.opacity = 0;
+                info.style.transform = 'translateX(-30%)';
+                setTimeout(() => {
+                    info.style.display = 'none';
+                }, 200);
+            }
         });
     }
+
 });

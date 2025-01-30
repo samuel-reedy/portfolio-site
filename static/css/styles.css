@@ -2,7 +2,7 @@
 body {
     background-color: rgb(5,8,22);
     color: rgb(255, 255, 255);
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -126,13 +126,6 @@ body {
     padding: 0;
 }
 
-.btn-work {
-    background-color: rgb(28, 22, 61);
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-    height: 100px;
-}
-
 .primary {
     font-weight: bold;
     color: rgb(255, 255, 255);
@@ -146,18 +139,25 @@ body {
     color: rgb(170,166,195);
 }
 
+.btn-work {
+    background-color: rgb(28, 22, 61);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
 .logo {
     border-radius: 50%;
-    overflow: hidden;
-    width: 100%; /* Make the logo take the full width of its container */
-    height: 100%; /* Make the logo take the full height of its container */
-    object-fit: cover; /* Ensure the image fits within the specified dimensions */
     background-color: rgb(255, 255, 255);
     aspect-ratio: 1/1; /* Maintain a 1:1 aspect ratio */
+    height: 100%;
 }
 
 .work-img {
     aspect-ratio: 16/9;
     object-fit: cover;
+    overflow: hidden;
+}
+
+.work-info-container {
     overflow: hidden;
 }
