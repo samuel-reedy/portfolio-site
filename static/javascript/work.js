@@ -64,29 +64,53 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error loading data:', error));
 
+    let isTransitioning = false;
+
     function showWorkInfo(index) {
+        if (isTransitioning) return; // Ignore clicks during transition
+    
+        isTransitioning = true; // Set the flag to indicate a transition is in progress
+    
         const workInfos = document.querySelectorAll('.work-info');
+        const workInfoContainer = document.getElementById('work-info');
+    
+        // Get the current height of the container
+        const currentHeight = workInfoContainer.offsetHeight;
+    
+        // Show the selected work info and get its height
         workInfos.forEach((info, i) => {
             if (i === index) {
-                setTimeout(() => {
-                    info.style.display = 'block';
-                    info.style.opacity = 0;
-                    info.style.transform = 'translateX(-30%)';
-                    setTimeout(() => {
-                        info.style.transition = 'opacity 0.2s, transform 0.2s';
-                        info.style.opacity = 1;
-                        info.style.transform = 'translateX(0)';
-                    }, 200);
-                }, 200);
-            } else {
-                info.style.transition = 'opacity 0.2s, transform 0.2s';
+                info.style.display = 'block';
                 info.style.opacity = 0;
                 info.style.transform = 'translateX(-30%)';
-                setTimeout(() => {
-                    info.style.display = 'none';
-                }, 200);
+            } else {
+                info.style.display = 'none';
             }
         });
+    
+        // Get the new height of the container
+        const newHeight = workInfos[index].offsetHeight;
+    
+        // Set the container height to the current height and then transition to the new height
+        workInfoContainer.style.height = `${currentHeight}px`;
+        setTimeout(() => {
+            workInfoContainer.style.transition = 'height 0.5s ease';
+            workInfoContainer.style.height = `${newHeight}px`;
+        }, 10);
+    
+        // Transition the opacity and transform of the selected work info
+        setTimeout(() => {
+            workInfos[index].style.transition = 'opacity 0.2s, transform 0.2s';
+            workInfos[index].style.opacity = 1;
+            workInfos[index].style.transform = 'translateX(0)';
+        }, 200);
+    
+        // Remove the height transition after it's done
+        setTimeout(() => {
+            workInfoContainer.style.transition = '';
+            workInfoContainer.style.height = '';
+            isTransitioning = false; // Reset the flag after the transition is complete
+        }, 400);
     }
 
 });

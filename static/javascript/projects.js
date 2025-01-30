@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 });
 
-                // Create filter buttons with colors
+                // Create filter buttons with colors for tags present in projects
                 Object.entries(tagsData).forEach(([category, { selected_colour, unselected_colour, tags }]) => {
-                    tags.forEach(tag => {
+                    tags.filter(tag => allTags.has(tag)).forEach(tag => {
                         const tagButton = document.createElement('button');
                         tagButton.classList.add('btn', 'btn-primary', 'm-1');
                         tagButton.textContent = tag;
@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('Selected Tags:', [...selectedTags]);
                     const cards = document.querySelectorAll('.card-project-other');
                     cards.forEach(card => {
-                        const projectTags = Array.from(card.querySelectorAll('.project-tags span')).map(span => span.textContent);
+                        const projectTags = Array.from(card.querySelectorAll('.project-tags span')).map(span => span.textContent.replace('#', ''));
                         console.log('Project Tags:', projectTags);
                         const matches = [...selectedTags].every(tag => projectTags.includes(tag));
                         if (matches || selectedTags.size === 0) {
-                            card.closest('.col-12, .col-sm-12, .col-md-4, .col-md-6, .col-lg-4').classList.remove('hidden'); // Show the card
+                            card.closest('.col-12, .col-sm-12, .col-md-6, .col-lg-4').classList.remove('hidden'); // Show the card
                         } else {
-                            card.closest('.col-12, .col-sm-12, .col-md-4, .col-md-6, .col-lg-4').classList.add('hidden'); // Hide the card
+                            card.closest('.col-12, .col-sm-12, .col-md-6, .col-lg-4').classList.add('hidden'); // Hide the card
                         }
                     });
                 }

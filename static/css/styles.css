@@ -10,13 +10,55 @@ body {
 /* Name styles */
 .name {
     font-family: 'Poppins', sans-serif;
-    font-size: 5rem; /* Adjust the size as needed */
+    font-weight: 900;
+    font-size: 4rem; /* Adjust the size as needed */
     font-weight: bold; 
-    text-transform: uppercase;
     color: white;
-    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
-                 1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
-    letter-spacing: 0.1em;
+}
+
+.highlight {
+    color: rgb(145,94,255); /* Replace with your desired color */
+}
+
+.role {
+    font-size: 1.5rem;
+}
+
+.headshot {
+    box-shadow: 0 0 20px 10px rgba(145, 94, 255, 0.75);
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.list-emoji {
+    margin-right: 10px;
+    flex-shrink: 0;
+    align-self: flex-start; /* Align the emoji to the top */
+}
+
+.btn-contact {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px;
+}
+
+.btn-mail {
+    background: linear-gradient(45deg, rgb(94, 118, 255), rgb(94, 191, 255));
+}
+
+.btn-phone {
+    background: linear-gradient(45deg, rgb(56, 187, 56), rgb(63, 255, 56));
+}
+
+.btn-github {
+    background: linear-gradient(45deg, rgb(145, 94, 255), rgb(255, 94, 255));
 }
 
 .card {
