@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         tagButton.style.borderColor = selected_colour;
                         tagButton.style.backgroundColor = unselected_colour;
                         tagButton.innerHTML = ` ${tag} <i class="fas fa-plus" style="color: ${selected_colour};"></i>`;
-                        tagButton.addEventListener('click', () => toggleTag(tag, tagButton, selected_colour, unselected_colour));
+                        tagButton.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            toggleTag(tag, tagButton, selected_colour, unselected_colour);
+                        });
                         filterContainer.appendChild(tagButton);
                     });
                 });
