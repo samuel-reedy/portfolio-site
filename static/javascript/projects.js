@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const projectRow = `
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 d-flex">
-                            <div class="card card-hover card-project-other m-0">
+                            <a href="${project.link}" target="_blank" class="card card-hover card-project-other m-0">
                                 <img class="card-img-top" src="${project.image}" alt="${project.title}">
                                 <div class="card-body">
                                     <h2 class="card-title">${project.title}</h2>
                                     <p class="card-text">${project.description}</p>
                                     <div class="project-tags">${tags}</div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     `;
 

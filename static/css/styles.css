@@ -237,3 +237,12 @@ html {
     overflow: hidden;
 }
 
+.card-project-other {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.card-project-other:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    color: inherit; /* Ensure color does not change on hover */
+}
