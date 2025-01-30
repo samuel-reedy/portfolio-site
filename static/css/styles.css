@@ -19,9 +19,8 @@ html {
 
 .signature {
     position: absolute;
-    top: -80%;
-    left: 50%;
     width: 100%; /* Adjust as needed */
+    top: 0;
     height: auto; /* Maintain aspect ratio */
     opacity: 0.5; /* Adjust opacity as needed */
     z-index: -1; /* Ensure it appears behind the text */
