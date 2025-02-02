@@ -12,10 +12,8 @@
         "static/images/sealegs/testing.jpg"
     ],
     "what": [
-        "Led the design and construction of an autonomous system for a small, unmanned surface vehicle (USV).",
-        "Innovated the power system by integrating solar technology, extending operating time by 20 hours and minimising environmental impact.",
-        "Conducted comprehensive testing, both in lab and field environments, to verify system performance and reliability.",
-        "Utilised Ansys CFX alongside Autodesk Inventor for custom keel modelling and fluid performance analysis, leading to 20% efficiency improvements based on analytical findings."
+        "Design and Prototype a small autonomous USV platform for testing and development.",
+        "Develop a custom solar power system to extend the operating time of the USV."
     ],
     "how": [
         "Performed comprehensive testing in both lab and field environments to verify system performance.",
