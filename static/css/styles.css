@@ -224,7 +224,6 @@ html {
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     aspect-ratio: 1/1; /* Maintain a 1:1 aspect ratio */
-    height: 100%;
 }
 
 .work-img {
